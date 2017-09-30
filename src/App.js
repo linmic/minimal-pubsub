@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 
-const rexPubSubEvents = {
-  BUTTON_STATE_CHANGE: 'rex.button.change',
+const pubSubEvents = {
+  BUTTON_STATE_CHANGE: 'button.change',
 };
 
 class App extends Component {
   state = { count: 0 };
 
   componentDidMount() {
-    window.rexPubsub.subscribe(rexPubSubEvents.BUTTON_STATE_CHANGE, count => {
+    window.pubsub.subscribe(pubSubEvents.BUTTON_STATE_CHANGE, count => {
       this.setState({ count });
     })
   }
 
   onClick = () => {
     this.setState(state => ({ count: state.count + 1 }), () => {
-      window.rexPubsub.publish(rexPubSubEvents.BUTTON_STATE_CHANGE, this.state.count);
+      window.pubsub.publish(pubSubEvents.BUTTON_STATE_CHANGE, this.state.count);
     });
   };
 

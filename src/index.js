@@ -5,8 +5,8 @@ import App from './App';
 import PubSub from './pubsub';
 import registerServiceWorker from './registerServiceWorker';
 
-if (typeof window !== 'undefined' && !window.rexPubsub) {
-  window.rexPubsub = new PubSub();
+if (typeof window !== 'undefined' && !window.pubsub) {
+  window.pubsub = new PubSub();
 }
 
 ReactDOM.render(<App />, document.getElementById('foo'));
