@@ -9,7 +9,7 @@ class PubSub {
 
     return {
       unsubscribe: void function() {
-        delete this.events[eventName][idx]
+        delete this.events[eventName][idx];
       },
     };
   }

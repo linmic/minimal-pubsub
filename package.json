@@ -44,7 +44,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "prettier": "prettier --single-quote --print-width 120 --trailing-comma es5 --write '{src,__{tests,mocks}__}/**/*.js'"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -86,5 +87,8 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "prettier": "^1.7.3"
   }
 }
